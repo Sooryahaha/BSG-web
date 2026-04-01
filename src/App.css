@@ -1,0 +1,8 @@
+/* App.css — clean slate. All layout is handled by globals.css + Tailwind */
+#root {
+  /* Remove Vite's default centering constraints */
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}

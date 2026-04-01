@@ -1,0 +1,45 @@
+/**
+ * Animation keyframes and utility classes.
+ */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin 8s linear infinite;
+}
+
+.animate-gpu {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.transition-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.page-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+.image-loading {
+  animation: pulse 1.5s ease-in-out infinite;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
