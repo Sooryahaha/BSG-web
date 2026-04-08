@@ -111,9 +111,8 @@ function HeroSection() {
           muted
           loop
           playsInline
-          preload="none"
+          preload="auto"
           className="w-full h-full object-cover will-change-transform opacity-75"
-          poster="/hero-bg.jpg"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
