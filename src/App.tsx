@@ -4,6 +4,7 @@ import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion';
 import { ReactLenis } from '@studio-freight/react-lenis';
 import Navbar from '@/components/navbar/Navbar';
 import { Footer } from '@/components/layout';
+import Chatbot from '@/components/chatbot/Chatbot';
 import { ROUTES } from '@/constants/routes';
 
 const Home                = lazy(() => import('@/pages/home').then((m) => ({ default: m.Home })));
@@ -104,6 +105,7 @@ function App() {
         </main>
         
         <Footer />
+        <Chatbot />
       </div>
     </ReactLenis>
   );
