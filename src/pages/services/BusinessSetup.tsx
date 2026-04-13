@@ -126,7 +126,7 @@ export function BusinessSetup() {
                    <Globe className="w-3.5 h-3.5" />
                    Foreign Subsidiary Hub
                  </div>
-                 <h3 className="text-3xl md:text-5xl font-serif font-bold mb-6 italic leading-[1.1]">Inbound Investment &<br />Cross-Border Setup.</h3>
+                 <h3 className="text-3xl md:text-5xl font-serif font-bold mb-6 italic leading-[1.1] text-white">Inbound Investment &<br />Cross-Border Setup.</h3>
                  <p className="text-lg text-white/50 leading-relaxed mb-10 font-light">
                     Expansion into the Indian market requires meticulous adherence to FEMA and FDI regulations. We manage everything from **Wholly Owned Subsidiaries (WOS)** to Branch and Liaison office establishments.
                  </p>
