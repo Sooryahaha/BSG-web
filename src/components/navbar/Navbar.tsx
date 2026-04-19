@@ -132,7 +132,7 @@ export default function Navbar() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           <div
-            className={`flex items-center justify-between h-[76px] rounded-full px-10 border transition-all duration-500 relative ${
+            className={`flex items-center justify-between h-[76px] rounded-full px-10 border transition-all duration-300 relative ${
               scrolled 
                 ? 'bg-[#0B1F3A]/85 backdrop-blur-3xl border-white/10 shadow-[0_32px_64px_rgba(0,0,0,0.3)]' 
                 : 'bg-transparent border-transparent'

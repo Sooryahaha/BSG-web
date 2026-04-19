@@ -9,9 +9,9 @@ import {
 const ease = [0.16, 1, 0.3, 1] as const;
 const fadeUp = {
   hidden:  { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
 };
-const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
+const stagger = { visible: { transition: { staggerChildren: 0.05 } } };
 
 export function BusinessSetup() {
   const STRUCTURES = [
@@ -83,7 +83,7 @@ export function BusinessSetup() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                transition={{ duration: 0.4, delay: idx * 0.05 }}
               >
                 <Link 
                   to={`/service/${item.slug}`}

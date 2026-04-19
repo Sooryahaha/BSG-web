@@ -65,12 +65,12 @@ export function ServiceDetail() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 * idx }}
+            transition={{ duration: 0.4, delay: 0.1 * idx }}
           >
             {/* Sophisticated Section Header */}
             <div className="flex flex-col gap-2 mb-10 group">
               <div className="flex items-center gap-3">
-                 <div className="w-8 h-px bg-blue-600 group-hover:w-12 transition-all duration-500" />
+                 <div className="w-8 h-px bg-blue-600 group-hover:w-12 transition-all duration-300" />
                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-blue-600">{section.type === 'list' ? 'Key Features' : 'Strategic Overview'}</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0B1F3A] italic">
@@ -95,7 +95,7 @@ export function ServiceDetail() {
                     </div>
                     <div className="space-y-1">
                        <span className="text-lg text-[#0B1F3A] font-bold tracking-tight">{item}</span>
-                       <div className="w-4 h-px bg-slate-100 group-hover:w-full transition-all duration-700" />
+                       <div className="w-4 h-px bg-slate-100 group-hover:w-full transition-all duration-300" />
                     </div>
                   </div>
                 ))}

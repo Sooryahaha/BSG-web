@@ -29,7 +29,7 @@ const wordVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.5,
       ease: [0.16, 1, 0.3, 1],
     },
   },
@@ -41,7 +41,7 @@ const itemVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.5,
       ease: [0.16, 1, 0.3, 1],
     },
   },
@@ -63,7 +63,7 @@ export function ServiceLayout({
           <motion.img
             initial={{ scale: 1.1, opacity: 0 }}
             animate={{ scale: 1.05, opacity: 0.4 }}
-            transition={{ duration: 1.5, ease: 'easeOut' }}
+            transition={{ duration: 1.0, ease: 'easeOut' }}
             src={heroImage}
             alt=""
             className="w-full h-full object-cover grayscale"
@@ -77,7 +77,7 @@ export function ServiceLayout({
           <motion.div
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="flex items-center gap-3 text-white/40 text-[10px] font-bold uppercase tracking-[0.3em] mb-12"
           >
             <Link to="/" className="hover:text-blue-400 transition-colors uppercase">HQ</Link>
@@ -92,7 +92,7 @@ export function ServiceLayout({
                <motion.div 
                  initial={{ opacity: 0, scale: 0.95 }}
                  animate={{ opacity: 1, scale: 1 }}
-                 transition={{ duration: 0.6, delay: 0.2 }}
+                 transition={{ duration: 0.4, delay: 0.2 }}
                  className="inline-flex items-center gap-3 mb-8 px-4 py-1.5 rounded-full border border-blue-400/20 bg-blue-500/10 backdrop-blur-md"
                >
                  <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
@@ -123,7 +123,7 @@ export function ServiceLayout({
                  <motion.p 
                    initial={{ opacity: 0, y: 20 }}
                    animate={{ opacity: 1, y: 0 }}
-                   transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                   transition={{ duration: 0.5, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
                    className="text-xl md:text-2xl text-white/70 font-light leading-relaxed max-w-2xl"
                  >
                    {subtitle}
@@ -135,7 +135,7 @@ export function ServiceLayout({
                initial="hidden"
                animate="visible"
                variants={{
-                 visible: { transition: { staggerChildren: 0.1, delayChildren: 0.8 } }
+                 visible: { transition: { staggerChildren: 0.05, delayChildren: 0.8 } }
                }}
                className="lg:col-span-4 lg:mt-6 grid grid-cols-1 gap-6"
              >
@@ -167,7 +167,7 @@ export function ServiceLayout({
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="lg:w-[65%]"
             >
               <div className="prose prose-slate max-w-none prose-headings:font-serif prose-headings:italic">
@@ -183,7 +183,7 @@ export function ServiceLayout({
                    initial={{ opacity: 0, scale: 0.98 }}
                    whileInView={{ opacity: 1, scale: 1 }}
                    viewport={{ once: true }}
-                   transition={{ duration: 0.6 }}
+                   transition={{ duration: 0.4 }}
                    className="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 shadow-premium group"
                  >
                    <div className="flex items-center gap-3 mb-10">
@@ -202,7 +202,7 @@ export function ServiceLayout({
                          initial={{ opacity: 0, x: 20 }}
                          whileInView={{ opacity: 1, x: 0 }}
                          viewport={{ once: true }}
-                         transition={{ delay: i * 0.1 }}
+                         transition={{ delay: i * 0.05 }}
                          className="flex gap-6 items-start"
                        >
                          <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center text-blue-600 shadow-soft border border-slate-100 group-hover:scale-110 transition-transform">

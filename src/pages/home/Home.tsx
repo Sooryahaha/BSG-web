@@ -20,13 +20,13 @@ const ACCENT  = '#2563EB';
 const ease = [0.16, 1, 0.3, 1] as const;
 const fadeUp = {
   hidden:  { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
 };
 const stagger = { 
   visible: { 
     transition: { 
-      staggerChildren: 0.1,
-      delayChildren: 0.1
+      staggerChildren: 0.05,
+      delayChildren: 0.05
     } 
   } 
 };
@@ -35,7 +35,7 @@ const staggerContainer = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.12,
+      staggerChildren: 0.05,
     }
   }
 };
@@ -147,7 +147,7 @@ function HeroSection() {
             <motion.h1 
               variants={{
                 hidden: { opacity: 0 },
-                visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.3 } }
+                visible: { opacity: 1, transition: { staggerChildren: 0.05, delayChildren: 0.3 } }
               }}
               initial="hidden"
               animate="visible"
@@ -155,16 +155,16 @@ function HeroSection() {
               style={{ fontSize: 'clamp(2.4rem,4.5vw,3.75rem)' }}
             >
               {"Your reliable partner".split(' ').map((word, i) => (
-                <motion.span key={i} variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease } } }} className="inline-block">{word}&nbsp;</motion.span>
+                <motion.span key={i} variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease } } }} className="inline-block">{word}&nbsp;</motion.span>
               ))}
               <br />
               {"in the".split(' ').map((word, i) => (
-                <motion.span key={i} variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease } } }} className="inline-block">{word}&nbsp;</motion.span>
+                <motion.span key={i} variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease } } }} className="inline-block">{word}&nbsp;</motion.span>
               ))}
               {" "}
-              <motion.span variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease } } }} className="font-serif italic text-blue-400">Business Setup</motion.span>
+              <motion.span variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease } } }} className="font-serif italic text-blue-400">Business Setup</motion.span>
               {" "}
-              <motion.span variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease } } }} className="inline-block">age.</motion.span>
+              <motion.span variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease } } }} className="inline-block">age.</motion.span>
             </motion.h1>
 
             <motion.p variants={fadeUp} className="text-[17px] leading-relaxed mb-9 max-w-lg text-white/70 font-light">
@@ -206,15 +206,15 @@ function HeroSection() {
           <motion.div
             initial={{ opacity: 0, x: 40, y: 10 }}
             animate={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ duration: 0.75, delay: 0.3, ease }}
+            transition={{ duration: 0.5, delay: 0.3, ease }}
             className="hidden lg:block w-[90%] ml-auto"
             style={{ 
               y: useSpring(useTransform(useScroll().scrollY, [0, 800], [0, -120]), { stiffness: 60, damping: 20 }),
             }}
           >
             <div className="rounded-[2rem] p-8 relative overflow-hidden bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl group">
-              <div className="absolute -top-24 -right-24 w-56 h-56 bg-blue-500/10 blur-[80px] rounded-full group-hover:bg-blue-500/20 transition-all duration-700" />
-              <div className="absolute -bottom-24 -left-24 w-56 h-56 bg-emerald-500/5 blur-[80px] rounded-full group-hover:bg-emerald-500/10 transition-all duration-700" />
+              <div className="absolute -top-24 -right-24 w-56 h-56 bg-blue-500/10 blur-[80px] rounded-full group-hover:bg-blue-500/20 transition-all duration-300" />
+              <div className="absolute -bottom-24 -left-24 w-56 h-56 bg-emerald-500/5 blur-[80px] rounded-full group-hover:bg-emerald-500/10 transition-all duration-300" />
               
               <div className="flex items-center justify-between mb-8 relative z-10">
                 <div className="text-[9px] font-bold uppercase tracking-[0.2em] text-white/50">
@@ -235,8 +235,8 @@ function HeroSection() {
               </div>
               
               <div className="rounded-[1rem] p-4 flex items-center gap-4 bg-white/[0.04] border border-white/10 relative z-10 group-hover:bg-white/[0.06] transition-all">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 bg-accent shadow-sm shadow-blue-500/20 group-hover:scale-110 transition-transform duration-500">
-                  <CheckCircle2 className="w-5 h-5 text-white transition-transform group-hover:rotate-[360deg] duration-700" />
+                <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 bg-accent shadow-sm shadow-blue-500/20 group-hover:scale-110 transition-transform duration-300">
+                  <CheckCircle2 className="w-5 h-5 text-white transition-transform group-hover:rotate-[360deg] duration-300" />
                 </div>
                 <div>
                   <div className="text-[13px] font-bold text-white tracking-wide">Institutional Verified</div>
@@ -275,7 +275,7 @@ function LogoStripSection() {
               <img
                 src={`/Clients/${logo}`}
                 alt=""
-                className="h-7 w-auto object-contain opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                className="h-7 w-auto object-contain opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
               />
             </div>
           ))}
@@ -303,7 +303,7 @@ function FocusSection() {
         <motion.h2
           variants={{
             hidden:  { opacity: 0, scale: 0.95 },
-            visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease } }
+            visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease } }
           }}
           className="font-serif italic font-bold leading-tight text-white mb-10"
           style={{ fontSize: 'clamp(2.5rem,5vw,4rem)' }}
@@ -313,7 +313,7 @@ function FocusSection() {
         <motion.div
           variants={{
             hidden:  { width: 0, opacity: 0 },
-            visible: { width: 64, opacity: 1, transition: { duration: 1, delay: 0.4 } }
+            visible: { width: 64, opacity: 1, transition: { duration: 0.6, delay: 0.4 } }
           }}
           className="h-1 mx-auto rounded-full"
           style={{ background: `linear-gradient(90deg, ${ACCENT}, rgba(11,31,58,0.2))` }}
@@ -360,8 +360,8 @@ function ExpertiseSection() {
               variants={fadeUp}
               className="group relative"
             >
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 bg-white shadow-[0_8px_24px_rgba(11,31,58,0.06)] border border-blue-100 group-hover:bg-accent group-hover:scale-110 transition-all duration-500 ease-[0.16,1,0.3,1] z-10 relative">
-                <item.icon className="w-6 h-6 text-accent group-hover:text-white transition-colors duration-500" />
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 bg-white shadow-[0_8px_24px_rgba(11,31,58,0.06)] border border-blue-100 group-hover:bg-accent group-hover:scale-110 transition-all duration-300 ease-[0.16,1,0.3,1] z-10 relative">
+                <item.icon className="w-6 h-6 text-accent group-hover:text-white transition-colors duration-300" />
               </div>
               <h3 className="text-lg font-bold mb-3 group-hover:text-accent transition-colors duration-300" style={{ color: TEXT }}>{item.title}</h3>
               <p className="text-sm leading-relaxed" style={{ color: MUTED }}>{item.desc}</p>
@@ -401,17 +401,17 @@ function ServicesSection() {
               key={svc.title} 
               variants={{
                 hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: i * 0.1 } }
+                visible: { opacity: 1, y: 0, transition: { duration: 0.4, delay: i * 0.05 } }
               }}
             >
               <Link to={svc.path} className="block rounded-[2rem] overflow-hidden group relative h-[420px] glass-card border-none">
                 <img
                   src={svc.img}
                   alt={svc.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110 grayscale-[0.1] group-hover:grayscale-0 shadow-2xl"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1s] group-hover:scale-110 grayscale-[0.1] group-hover:grayscale-0 shadow-2xl"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F3A]/95 via-[#0B1F3A]/40 to-transparent group-hover:via-[#0B1F3A]/20 transition-all duration-700" />
-                <div className="absolute bottom-0 left-0 right-0 p-8 transform group-hover:translate-y-[-8px] transition-transform duration-500">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F3A]/95 via-[#0B1F3A]/40 to-transparent group-hover:via-[#0B1F3A]/20 transition-all duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-8 transform group-hover:translate-y-[-8px] transition-transform duration-300">
                   <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">{svc.title}</h3>
                   <p className="text-sm leading-relaxed mb-6 text-white/70 group-hover:text-white transition-colors line-clamp-2">{svc.desc}</p>
                   <span className="inline-flex items-center gap-1.5 text-xs font-bold text-accent group-hover:text-blue-400">
@@ -462,7 +462,7 @@ function WhySection() {
                 variants={fadeUp}
                 className="group"
               >
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 shadow-[0_12px_32px_rgba(37,99,235,0.12)] border border-blue-100 group-hover:-translate-y-2 group-hover:shadow-[0_16px_40px_rgba(37,99,235,0.18)] transition-all duration-500 ease-[0.16,1,0.3,1]" style={{ background: '#ffffff' }}>
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 shadow-[0_12px_32px_rgba(37,99,235,0.12)] border border-blue-100 group-hover:-translate-y-2 group-hover:shadow-[0_16px_40px_rgba(37,99,235,0.18)] transition-all duration-300 ease-[0.16,1,0.3,1]" style={{ background: '#ffffff' }}>
                   <card.icon className="w-6 h-6" style={{ color: ACCENT }} />
                 </div>
                 <h3 className="text-xl font-bold mb-5" style={{ color: TEXT }}>{card.title}</h3>
@@ -539,21 +539,21 @@ function DestinationsSection() {
                 <img
                   src={dest.img}
                   alt={dest.name}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1s] group-hover:scale-110"
                 />
                 
                 {/* Gradient Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#07111F] via-[#07111F]/40 to-transparent group-hover:via-[#07111F]/60 transition-all duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#07111F] via-[#07111F]/40 to-transparent group-hover:via-[#07111F]/60 transition-all duration-300" />
                 
                 {/* Initial Content View */}
-                <div className="absolute inset-0 p-8 flex flex-col justify-end group-hover:translate-y-[-100%] transition-transform duration-700 ease-[0.22, 1, 0.36, 1]">
+                <div className="absolute inset-0 p-8 flex flex-col justify-end group-hover:translate-y-[-100%] transition-transform duration-300 ease-[0.22, 1, 0.36, 1]">
                   <div className="text-2xl mb-4 transform group-hover:scale-125 transition-transform">{dest.flag}</div>
                   <h3 className="text-lg font-bold text-white mb-2">{dest.name}</h3>
                   <p className="text-xs leading-relaxed text-white/50">{dest.desc}</p>
                 </div>
 
                 {/* Hover Strategy Data Reveal */}
-                <div className="absolute inset-0 p-8 flex flex-col justify-center bg-blue-600/90 backdrop-blur-sm translate-y-[100%] group-hover:translate-y-0 transition-transform duration-700 ease-[0.22, 1, 0.36, 1]">
+                <div className="absolute inset-0 p-8 flex flex-col justify-center bg-blue-600/90 backdrop-blur-sm translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-[0.22, 1, 0.36, 1]">
                    <div className="text-white/60 text-[10px] font-bold uppercase tracking-[0.25em] mb-4">Market Intel</div>
                    <h4 className="text-xl font-bold text-white mb-6 underline decoration-blue-400 underline-offset-8">Target: {dest.name}</h4>
                    
@@ -630,7 +630,7 @@ function ProcessSection() {
                 transition={{ delay: index * 0.15 }}
                 className="relative z-10 text-center flex flex-col items-center group cursor-default"
               >
-                <div className="w-20 h-20 rounded-full flex flex-col items-center justify-center bg-white border border-blue-100 shadow-[0_8px_30px_rgba(37,99,235,0.08)] mb-8 relative group-hover:scale-110 group-hover:shadow-[0_12px_40px_rgba(37,99,235,0.15)] transition-all duration-500 z-10">
+                <div className="w-20 h-20 rounded-full flex flex-col items-center justify-center bg-white border border-blue-100 shadow-[0_8px_30px_rgba(37,99,235,0.08)] mb-8 relative group-hover:scale-110 group-hover:shadow-[0_12px_40px_rgba(37,99,235,0.15)] transition-all duration-300 z-10">
                   <step.icon className="w-8 h-8 text-blue-600 relative z-10 transition-transform group-hover:scale-110" />
                   
                   {/* Step Number Badge */}

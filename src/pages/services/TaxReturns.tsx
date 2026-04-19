@@ -16,9 +16,9 @@ const SHADOW_H = '0 32px 80px rgba(11,31,58,0.14), 0 8px 24px rgba(37,99,235,0.0
 const ease = [0.25, 0.1, 0.25, 1] as const;
 const fadeUp = {
   hidden:  { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease } },
 };
-const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
+const stagger = { visible: { transition: { staggerChildren: 0.05 } } };
 
 const SERVICES = [
   { slug: 'gst-return-filing', icon: Receipt,    title: 'GST Registration & Filing',    desc: 'Complete GST enrollment, monthly/quarterly returns, and annual reconciliation with zero penalties.' },

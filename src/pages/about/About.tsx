@@ -86,7 +86,7 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-4xl mx-auto"
           >
             <div className="inline-flex items-center gap-2.5 mb-8 px-4 py-2 rounded-full border border-blue-400/20 bg-blue-500/10 backdrop-blur-md">
@@ -124,7 +124,7 @@ export default function About() {
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.5 }}
             >
               <div className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.22em] text-blue-600 mb-6">
                 <div className="w-5 h-px bg-blue-600" />
@@ -157,14 +157,14 @@ export default function About() {
               <div className="relative aspect-square rounded-[2rem] overflow-hidden shadow-xl bg-slate-100 group">
                 <img 
                   src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" 
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" 
                   alt="Boardroom" 
                 />
                 <div className="absolute inset-0 bg-blue-600/10 group-hover:bg-transparent transition-colors" />
               </div>
 
               {/* Box 2: 7 Years */}
-              <div className="p-8 rounded-[2rem] bg-slate-50 border border-slate-100 flex flex-col justify-between shadow-lg hover:bg-white hover:shadow-2xl transition-all duration-500">
+              <div className="p-8 rounded-[2rem] bg-slate-50 border border-slate-100 flex flex-col justify-between shadow-lg hover:bg-white hover:shadow-2xl transition-all duration-300">
                 <History className="w-10 h-10 text-blue-600 mb-6 opacity-40" />
                 <div>
                    <div className="text-4xl font-bold text-[#0B1F3A] mb-1">7Y+</div>
@@ -230,7 +230,7 @@ export default function About() {
                <div className="aspect-[3/4] rounded-[2.5rem] overflow-hidden shadow-2xl relative z-10">
                   <img 
                     src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1000" 
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" 
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" 
                     alt="Corporate Strategy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F3A]/60 to-transparent" />
@@ -254,7 +254,7 @@ export default function About() {
                  className="flex gap-10 group"
                >
                   <div className="flex-shrink-0">
-                     <div className="w-16 h-16 rounded-full border border-blue-100 flex items-center justify-center text-blue-600 transition-all duration-500 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600">
+                     <div className="w-16 h-16 rounded-full border border-blue-100 flex items-center justify-center text-blue-600 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600">
                         <Target className="w-7 h-7" />
                      </div>
                   </div>
@@ -280,7 +280,7 @@ export default function About() {
                  className="flex gap-10 group"
                >
                   <div className="flex-shrink-0">
-                     <div className="w-16 h-16 rounded-full border border-blue-100 flex items-center justify-center text-blue-600 transition-all duration-500 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600">
+                     <div className="w-16 h-16 rounded-full border border-blue-100 flex items-center justify-center text-blue-600 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600">
                         <Award className="w-7 h-7" />
                      </div>
                   </div>
@@ -330,8 +330,8 @@ export default function About() {
                  viewport={{ once: true }}
                  className="group"
                >
-                  <div className="relative aspect-[4/5.5] rounded-[2.5rem] overflow-hidden mb-8 shadow-2xl transition-all duration-500 group-hover:-translate-y-4">
-                     <img src={member.image} alt={member.name} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                  <div className="relative aspect-[4/5.5] rounded-[2.5rem] overflow-hidden mb-8 shadow-2xl transition-all duration-300 group-hover:-translate-y-4">
+                     <img src={member.image} alt={member.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                      <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F3A] via-transparent to-transparent opacity-80" />
                      
                      <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -374,10 +374,10 @@ export default function About() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}
-                className={`p-14 group transition-all duration-500 hover:bg-slate-50/50 ${i < 2 ? 'border-b md:border-b-0 md:border-r border-slate-200' : ''}`}
+                transition={{ delay: i * 0.055 }}
+                className={`p-14 group transition-all duration-300 hover:bg-slate-50/50 ${i < 2 ? 'border-b md:border-b-0 md:border-r border-slate-200' : ''}`}
               >
-                <div className="w-12 h-12 rounded-full flex items-center justify-center mb-10 transition-all duration-500 group-hover:scale-110" style={{ background: `${val.color}10`, color: val.color }}>
+                <div className="w-12 h-12 rounded-full flex items-center justify-center mb-10 transition-all duration-300 group-hover:scale-110" style={{ background: `${val.color}10`, color: val.color }}>
                    <val.icon className="w-6 h-6" />
                 </div>
                 <h3 className="text-2xl font-bold text-[#0B1F3A] mb-5 tracking-tight">{val.title}</h3>

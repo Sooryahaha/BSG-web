@@ -9,9 +9,9 @@ import {
 const ease = [0.16, 1, 0.3, 1] as const;
 const fadeUp = {
   hidden:  { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
 };
-const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
+const stagger = { visible: { transition: { staggerChildren: 0.05 } } };
 
 export function GlobalIncorporation() {
   const DESTINATIONS = [
@@ -79,8 +79,8 @@ export function GlobalIncorporation() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="group relative h-[500px] rounded-[3.5rem] overflow-hidden shadow-premium hover:shadow-3xl transition-all duration-700"
+                transition={{ duration: 0.4, delay: idx * 0.05 }}
+                className="group relative h-[500px] rounded-[3.5rem] overflow-hidden shadow-premium hover:shadow-3xl transition-all duration-300"
               >
                 <Link to={`/service/${dest.slug}`} className="absolute inset-0 z-20" aria-label={`View ${dest.name} requirements`} />
                 <img 
@@ -90,10 +90,10 @@ export function GlobalIncorporation() {
                 />
                 
                 {/* Visual Gradient Stacks */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent group-hover:via-primary/20 transition-all duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent group-hover:via-primary/20 transition-all duration-300" />
                 
                 {/* Floating Meta Stats Reveal */}
-                <div className="absolute top-10 right-10 z-10 flex flex-col gap-2 translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                <div className="absolute top-10 right-10 z-10 flex flex-col gap-2 translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 delay-100">
                    {[
                      { label: 'Wait', val: dest.data.time },
                      { label: 'Tax', val: dest.data.tax }

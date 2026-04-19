@@ -12,7 +12,7 @@ const SHADOW_H = '0 32px 80px rgba(11,31,58,0.14), 0 8px 24px rgba(37,99,235,0.0
 const ease = [0.25, 0.1, 0.25, 1] as const;
 const fadeUp = {
   hidden:  { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease } },
 };
 
 export default function Contact() {
@@ -57,7 +57,7 @@ export default function Contact() {
                initial="hidden"
                animate="visible"
                variants={{
-                 visible: { transition: { staggerChildren: 0.1 } }
+                 visible: { transition: { staggerChildren: 0.05 } }
                }}
                className="max-w-2xl"
              >
@@ -72,7 +72,7 @@ export default function Contact() {
                <motion.h1 
                  variants={{
                    hidden: { opacity: 0 },
-                   visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } }
+                   visible: { opacity: 1, transition: { staggerChildren: 0.05, delayChildren: 0.2 } }
                  }}
                  initial="hidden"
                  animate="visible"
@@ -80,11 +80,11 @@ export default function Contact() {
                  style={{ fontSize: 'clamp(2.8rem, 6vw, 4.5rem)' }}
                >
                  {"Let's Scale Your".split(' ').map((word, i) => (
-                    <motion.span key={i} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease } } }} className="inline-block">{word}&nbsp;</motion.span>
+                    <motion.span key={i} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease } } }} className="inline-block">{word}&nbsp;</motion.span>
                  ))}
                  <br />
                  {"Business Globally.".split(' ').map((word, i) => (
-                    <motion.span key={i} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease } } }} className="text-blue-500 font-serif italic inline-block">{word}&nbsp;</motion.span>
+                    <motion.span key={i} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease } } }} className="text-blue-500 font-serif italic inline-block">{word}&nbsp;</motion.span>
                  ))}
                </motion.h1>
    
@@ -116,7 +116,7 @@ export default function Contact() {
              <motion.div 
                initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
                animate={{ opacity: 1, scale: 1, rotate: 0 }}
-               transition={{ duration: 1.2, ease }}
+               transition={{ duration: 0.8, ease }}
                className="hidden lg:flex justify-end"
              >
                 <div className="relative w-80 h-80">
@@ -143,7 +143,7 @@ export default function Contact() {
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={{
-                visible: { transition: { staggerChildren: 0.12 } }
+                visible: { transition: { staggerChildren: 0.05 } }
               }}
             >
               {/* Contact items */}
@@ -180,10 +180,10 @@ export default function Contact() {
                     className="flex gap-6 group"
                   >
                     <div
-                      className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-all duration-500 group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110"
+                      className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110"
                       style={{ background: 'rgba(37,99,235,0.04)', border: '1px solid rgba(37,99,235,0.1)' }}
                     >
-                      <Icon className="w-6 h-6 transition-colors duration-500" style={{ color: idx === 999 ? 'white' : ACCENT }} />
+                      <Icon className="w-6 h-6 transition-colors duration-300" style={{ color: idx === 999 ? 'white' : ACCENT }} />
                     </div>
                     <div>
                       <div className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2 transition-colors group-hover:text-blue-600" style={{ color: MUTED }}>{label}</div>
@@ -206,7 +206,7 @@ export default function Contact() {
                 variants={fadeUp}
                 className="rounded-[2.5rem] p-10 bg-slate-900 shadow-2xl relative overflow-hidden group"
               >
-                <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-all duration-700 group-hover:scale-110 group-hover:rotate-12">
+                <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">
                    <Globe2 className="w-24 h-24 text-white" />
                 </div>
                 <div className="relative z-10">
@@ -234,7 +234,7 @@ export default function Contact() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2, ease }}
+              transition={{ duration: 0.5, delay: 0.2, ease }}
             >
               <div
                 className="rounded-[3rem] p-10 md:p-14 relative"
