@@ -1,7 +1,7 @@
 import { Suspense, lazy, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion';
-import { ReactLenis } from '@studio-freight/react-lenis';
+
 import Navbar from '@/components/navbar/Navbar';
 import { Footer } from '@/components/layout';
 import Chatbot from '@/components/chatbot/Chatbot';
@@ -63,15 +63,6 @@ function App() {
   }, [location.pathname]);
 
   return (
-    <ReactLenis root options={{ 
-      duration: 0.6, 
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      wheelMultiplier: 1.0,
-      touchMultiplier: 2.0,
-      lerp: 0.08, // Slightly more snappy than 0.1
-      infinite: false
-    }}>
       <div className="min-h-screen bg-white flex flex-col selection:bg-blue-100 selection:text-blue-700" style={{ color: '#0B1F3A' }}>
         <ScrollProgress />
         <Navbar />
@@ -107,7 +98,6 @@ function App() {
         <Footer />
         <Chatbot />
       </div>
-    </ReactLenis>
   );
 }
 
